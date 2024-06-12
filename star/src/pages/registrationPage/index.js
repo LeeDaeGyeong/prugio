@@ -30,10 +30,10 @@ const RegistrationPage = () => {
 
     emailjs
       .send(
-        "service_4d8xtot",
-        "template_4xbexs7",
+        "service_wfv0sa8",
+        "template_0urvv7o",
         templateParams,
-        "Cz4HN7E9Ygfqpynmx"
+        "lV9HSzGpAIoyeUbx_"
       )
       .then(() => {
         alert("등록이 완료되었습니다!");

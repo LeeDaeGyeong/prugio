@@ -8,8 +8,8 @@ const Header = () => {
 
   const navList = [
     { navName: "사업개요", navParam: "overview" },
-    { navName: "입지환경", navParam: "overview" },
-    { navName: "프리미엄6", navParam: "overview" },
+    { navName: "입지환경", navParam: "environment" },
+    { navName: "프리미엄6", navParam: "premium" },
     { navName: "관심고객등록", navParam: "registration" },
   ];
 

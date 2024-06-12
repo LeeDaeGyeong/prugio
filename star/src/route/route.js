@@ -3,6 +3,8 @@ import HomePage from "../pages/homePage";
 import Layout from "../layout/layout";
 import OverViewPage from "../pages/overViewPage";
 import RegistrationPage from "../pages/registrationPage";
+import EnvironmentPage from "../pages/environmentPage";
+import PremiumPage from "../pages/premiumPage";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/environment",
-        element: <OverViewPage />,
+        element: <EnvironmentPage />,
+      },
+      {
+        path: "/premium",
+        element: <PremiumPage />,
       },
       {
         path: "/registration",
