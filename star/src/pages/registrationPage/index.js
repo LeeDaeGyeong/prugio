@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import emailjs from "emailjs-com";
 import registrationImg from "../../images/registrationImg.jpg";
 
 const RegistrationPage = () => {
@@ -19,8 +20,33 @@ const RegistrationPage = () => {
 
   const onRegistration = (e) => {
     e.preventDefault();
+
     console.log("Form data submitted:", formData);
-    // 여기에 폼 데이터를 전송하는 로직을 추가할 수 있습니다.
+    const templateParams = {
+      name: formData.name,
+      contact: formData.contact,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "service_4d8xtot",
+        "template_4xbexs7",
+        templateParams,
+        "Cz4HN7E9Ygfqpynmx"
+      )
+      .then(() => {
+        alert("등록이 완료되었습니다!");
+      })
+      .catch(() => {
+        alert("등록에 실패했습니다. 다시 시도해주세요.");
+      });
+
+    setFormData({
+      name: "",
+      contact: "",
+      message: "",
+    });
   };
 
   return (
@@ -28,7 +54,7 @@ const RegistrationPage = () => {
       <img src={registrationImg} alt="registrationImg" />
       <Form onSubmit={onRegistration}>
         <Label>
-          이름:
+          이름
           <Input
             type="text"
             name="name"
@@ -37,7 +63,7 @@ const RegistrationPage = () => {
           />
         </Label>
         <Label>
-          연락처:
+          연락처
           <Input
             type="text"
             name="contact"
@@ -46,7 +72,7 @@ const RegistrationPage = () => {
           />
         </Label>
         <Label>
-          문의내용:
+          문의내용
           <Textarea
             name="message"
             value={formData.message}
