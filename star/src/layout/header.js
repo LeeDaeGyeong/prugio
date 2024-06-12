@@ -31,7 +31,7 @@ const Header = () => {
           </li>
         ))}
       </Ul>
-      <CallNumber>1800-7065</CallNumber>
+      <CallNumber href="tel:1800-7065">1800-7065</CallNumber>
     </Wrapper>
   );
 };
@@ -74,11 +74,17 @@ const Ul = styled.ul`
   }
 `;
 
-const CallNumber = styled.div`
+const CallNumber = styled.a`
   color: ${({ theme }) => theme.COLORS.brown};
   font-size: ${({ theme }) => theme.FONT_SIZE.extraLarge};
   font-weight: ${({ theme }) => theme.FONT_WEIGHT.bold};
   border: 2px solid ${({ theme }) => theme.COLORS.brown};
   border-radius: 12px;
   padding: 12px 12px;
+
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
