@@ -33,30 +33,61 @@ export default OverViewPage;
 
 const Wrapper = styled.div`
   text-align: center;
+  padding: 20px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    padding: 10px;
+  }
 `;
 
 const OverviewTitle = styled.h1`
   color: ${({ theme }) => theme.COLORS.brown};
-  font-size: 40px;
+  font-size: ${({ theme }) => theme.FONT_SIZE.extraLarge};
   font-weight: ${({ theme }) => theme.FONT_WEIGHT.bold};
   margin: 40px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: ${({ theme }) => theme.FONT_SIZE.large};
+  }
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    font-size: ${({ theme }) => theme.FONT_SIZE.extraLarge};
+  }
 `;
 
 const OverViewImg = styled.img`
   margin: 40px;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    margin: 20px;
+  }
 `;
 
 const TextBox = styled.div`
   margin: 0 auto;
-  width: 900px;
+  width: 90%;
+  max-width: 900px;
   text-align: left;
-  background-color: #f5f5f5;
+  background-color: ${({ theme }) => theme.COLORS.primary.gray};
+  padding: 20px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const Text = styled.p`
   margin-bottom: 24px;
-  line-height: 1;
+  line-height: 1.5;
   color: #696969;
   font-size: ${({ theme }) => theme.FONT_SIZE.small};
   font-weight: ${({ theme }) => theme.FONT_WEIGHT.regular};
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: ${({ theme }) => theme.FONT_SIZE.extraSmall};
+  }
 `;

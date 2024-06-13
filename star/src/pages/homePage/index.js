@@ -41,18 +41,30 @@ const Wrapper = styled.div`
 const Box = styled.div`
   ${flexCenter}
   padding: 100px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    flex-direction: column;
+    padding: 20px;
+  }
 `;
 
 const BannerImg = styled.img`
-  width: 1600px;
+  width: 100%;
+  max-width: 1600px;
   height: auto;
   margin-top: 40px;
   opacity: 0;
   animation: ${fadeIn} 2s forwards;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    width: 100%;
+    margin-top: 20px;
+  }
 `;
 
 const MainImg = styled.img`
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   height: auto;
   margin-top: 100px;
   opacity: 0;
@@ -61,18 +73,37 @@ const MainImg = styled.img`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    width: 90%;
+    margin-top: 20px;
+  }
 `;
 
 const MainText1 = styled.img`
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
   margin-top: 100px;
   margin-left: 40px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 0;
+  }
 `;
 
 const MainText2 = styled.img`
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   margin-top: 100px;
   margin-left: 40px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 0;
+  }
 `;

@@ -51,7 +51,7 @@ const RegistrationPage = () => {
 
   return (
     <Wrapper>
-      <img src={registrationImg} alt="registrationImg" />
+      <Image src={registrationImg} alt="registrationImg" />
       <Form onSubmit={onRegistration}>
         <Label>
           이름
@@ -89,10 +89,30 @@ export default RegistrationPage;
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #fff;
+  padding: 20px;
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    padding: 10px;
+  }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    padding: 5px;
+  }
+`;
+
+const Image = styled.img`
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    margin-bottom: 10px;
+  }
 `;
 
 const Form = styled.form`
@@ -103,11 +123,25 @@ const Form = styled.form`
   background-color: #f0f0f0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    width: 90%;
+    padding: 15px;
+  }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const Label = styled.label`
   margin-bottom: 15px;
   color: #555;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    margin-bottom: 10px;
+  }
 `;
 
 const Input = styled.input`
@@ -117,6 +151,14 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    font-size: 14px;
+  }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: 12px;
+  }
 `;
 
 const Textarea = styled.textarea`
@@ -127,6 +169,14 @@ const Textarea = styled.textarea`
   border-radius: 4px;
   font-size: 16px;
   resize: vertical;
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    font-size: 14px;
+  }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: 12px;
+  }
 `;
 
 const Button = styled.button`
@@ -137,7 +187,17 @@ const Button = styled.button`
   color: white;
   font-size: 16px;
   cursor: pointer;
+
   &:hover {
     background-color: ${({ theme }) => theme.COLORS.primary.deep};
+  }
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    font-size: 14px;
+  }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: 12px;
+    padding: 8px;
   }
 `;

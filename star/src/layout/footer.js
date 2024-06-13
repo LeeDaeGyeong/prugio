@@ -34,23 +34,41 @@ export default Footer;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 400px;
-  padding: 80px;
-  padding-left: 160px;
-
+  padding: 40px 20px;
   background-color: ${({ theme }) => theme.COLORS.brown};
   color: ${({ theme }) => theme.COLORS.white};
   font-size: ${({ theme }) => theme.FONT_SIZE.medium};
   font-weight: ${({ theme }) => theme.FONT_WEIGHT.regular};
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    padding: 30px 15px;
+  }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    padding: 20px 10px;
+    height: auto;
+    text-align: center;
+  }
 `;
 
 const LogoImg = styled.img`
-  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 200px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    margin-bottom: 10px;
+  }
 `;
 
 const Text = styled.p`
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   line-height: 1.5;
   font-size: ${({ theme }) => theme.FONT_SIZE.small};
   font-weight: ${({ theme }) => theme.FONT_WEIGHT.bold};
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: ${({ theme }) => theme.FONT_SIZE.xsmall};
+    margin-bottom: 12px;
+  }
 `;

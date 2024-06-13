@@ -74,17 +74,36 @@ const Title = styled.h1`
   font-size: 40px;
   font-weight: ${({ theme }) => theme.FONT_WEIGHT.bold};
   margin: 40px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: ${({ theme }) => theme.FONT_SIZE.large};
+    margin: 20px;
+  }
 `;
 
 const Img = styled.img`
   margin: 40px;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    margin: 20px;
+  }
 `;
 
 const TextBox = styled.div`
   margin: 0 auto;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   text-align: left;
   background-color: #f5f5f5;
+  padding: 20px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    width: 90%;
+    padding: 10px;
+  }
 `;
 
 const Text = styled.p`
@@ -92,4 +111,8 @@ const Text = styled.p`
   color: #696969;
   font-size: ${({ theme }) => theme.FONT_SIZE.small};
   font-weight: ${({ theme }) => theme.FONT_WEIGHT.regular};
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: ${({ theme }) => theme.FONT_SIZE.extraSmall};
+  }
 `;
