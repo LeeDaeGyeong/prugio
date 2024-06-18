@@ -6,6 +6,7 @@ const COLORS = {
   font: "#0F0F0F",
   error: "#EC0707",
   brown: "#8a7d6f",
+  tan: "#FFE4C4",
   white: "#FFFFFF",
   gray: "#f5f5f5",
   black: "#0F0F0F",
