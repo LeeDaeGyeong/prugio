@@ -3,12 +3,15 @@ import GlobalStyles from "./styles/global.style";
 import router from "./route/route";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme.style";
+import PrugioProvider from "./context";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <RouterProvider router={router} />
+      <PrugioProvider>
+        <GlobalStyles />
+        <RouterProvider router={router} />
+      </PrugioProvider>
     </ThemeProvider>
   );
 }
