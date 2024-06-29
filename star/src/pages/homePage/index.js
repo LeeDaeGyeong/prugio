@@ -9,7 +9,13 @@ import { flexCenter } from "../../styles/common.style";
 const HomePage = () => {
   return (
     <Wrapper>
-      <BannerImg src={bannerImg} alt="bannerImg" />
+      <BannerContainer>
+        <BannerTextBox>
+          <BannerText1>새로운 중심, 빛나는 시작</BannerText1>
+          <BannerText2>푸르지오 스타셀라49</BannerText2>
+        </BannerTextBox>
+        <BannerImg src={bannerImg} alt="bannerImg" />
+      </BannerContainer>
       <Box>
         <MainImg src={mainImg1} alt="mainImg1" />
         <MainText1 src={mainText1} alt="mainText1" />
@@ -47,10 +53,61 @@ const Box = styled.div`
     padding: 20px;
   }
 `;
+const BannerContainer = styled.div`
+  position: relative;
+`;
+
+const BannerTextBox = styled.div`
+  position: absolute;
+  top: 60px;
+  left: 120px;
+  text-align: left;
+  line-height: 1.4;
+  color: ${({ theme }) => theme.COLORS.white};
+  z-index: 1;
+
+  animation: ${fadeIn} 4s forwards;
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    top: 60px;
+    left: 30px;
+  }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    top: 24px;
+    left: 16px;
+  }
+`;
+
+const BannerText1 = styled.p`
+  font-size: 30px;
+  font-weight: ${({ theme }) => theme.FONT_WEIGHT.bold};
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    font-size: 25px;
+  }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: 18px;
+  }
+`;
+
+const BannerText2 = styled.p`
+  font-size: 80px;
+  font-weight: ${({ theme }) => theme.FONT_WEIGHT.bold};
+
+  @media ${({ theme }) => theme.DEVICE.tablet} {
+    font-size: 58px;
+  }
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: 32px;
+  }
+`;
 
 const BannerImg = styled.img`
   width: 100%;
-  max-width: 1600px;
+  max-width: 1700px;
   height: auto;
   margin-top: 40px;
   opacity: 0;
